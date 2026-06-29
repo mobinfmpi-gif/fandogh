@@ -1,3 +1,2 @@
 #!/bin/bash
-export GROQ_API_KEY=$(cat .env | cut -d'=' -f2)
-python app.py
+gunicorn -w 2 -b 0.0.0.0:$PORT app:app
